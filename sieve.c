@@ -4,45 +4,51 @@
 // 
 // Initialize starting number to 2
 // Loop
-// Loop from 3 to 1000 and set every number divisible by 3 to false
-// Print all numbers that were set to true in a tabular format
+// 
+// Print all numbers that are not changecd to 0
+// Printed numbers will be prime
+// Create loop to give tabular formatting
 
 #include <stdio.h>
-#define SIZE 999
+#define SIZE 999 //0-999
 
 
 	int main() {
-	int primes[SIZE];
-
-	puts("The prime numbers from 1 to 999 are:\n");
+	int primes[SIZE]; //array with 1000
+	int count = 0; 
 	
-	for(int i = 2; i <= SIZE; i++) {
+	puts("The prime numbers from 1 to 999 are:\n"); //introduction and purpose
+	
+	for(int i = 2; i <= SIZE; i++) { //creating the list of numbers 2-1000
 		primes[i] = i;	
 	}
 	
 	int i = 2;
 	
-	while((i*i) <= SIZE) {
-		if (primes[i] != 0) {
-			for(int x = 2; x < SIZE; x++) {
-				if(primes[i]*x > SIZE) {
-					break;
+	while((i*i) <= SIZE) { // performs loop when a number multiplies against itself, up to 999
+		if (primes[i] != 0) { // ensures number does not equal 0
+			for(int x = 2; x < SIZE; x++) { // loops 
+				if(primes[i]*x > SIZE) { // loops up to 999 and multiplies against itself
 				}
 				else 
-					primes[primes[i]*x] = 0;
+					primes[primes[i]*x] = 0; //
 	
 	}
 	}
 	i++;
 	}
 	
-	
-	
-	
-	for(int i = 2; i <= SIZE; i++) {
-			if (primes[i] != 0) {
-				printf("%d\t", primes[i]);
+		
+		
+		for(int i = 2; i <= SIZE; i++) { // looping results to print
+			if (primes[i] != 0) {// excludes numbers that equal 0 
+			printf("%d ", primes[i]);
+				if (count == 10)
+				break;
+				count++;
 			}
+		}
+	
+	
 	}
 	
-}
